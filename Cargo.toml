@@ -1,0 +1,27 @@
+[package]
+name = "s3lint"
+version = "0.1.0"
+edition = "2021"
+description = "Audits an S3-compatible bucket's real policy and ACL for public-read/public-write misconfigurations"
+license = "MIT"
+authors = ["Animesh Raj <animesh080808@gmail.com>"]
+repository = "https://github.com/itsarraj/s3lint"
+readme = "README.md"
+keywords = ["s3", "security", "bucket-policy", "cli", "cloud"]
+categories = ["command-line-utilities"]
+
+[lib]
+name = "s3lint"
+path = "src/lib.rs"
+
+[[bin]]
+name = "s3lint"
+path = "src/main.rs"
+
+[dependencies]
+aws-config = { version = "1", features = ["behavior-version-latest"] }
+aws-sdk-s3 = "1"
+tokio = { version = "1", features = ["full"] }
+clap = { version = "4", features = ["derive", "env"] }
+anyhow = "1"
+serde_json = "1"
