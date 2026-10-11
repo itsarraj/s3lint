@@ -6,6 +6,12 @@ nearly every "open S3 bucket" data-leak headline. Complements this
 workspace's `s3sync` (which moves files) with the security-review side
 of the same infrastructure.
 
+## Installation
+
+```sh
+cargo install --path .
+```
+
 ## Usage
 
 ```bash
